@@ -8,7 +8,14 @@ app.use(express.json());
 // const user = require('./routes/user')
 
 const fileupload = require("express-fileupload")
-app.use(fileupload());
+// Note that this option available for versions 1.0.0 and newer. 
+
+app.use(fileupload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/'
+}));
+
+
 
 
 ///mouniting
